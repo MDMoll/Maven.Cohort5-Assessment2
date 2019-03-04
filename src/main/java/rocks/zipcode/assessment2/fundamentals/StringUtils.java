@@ -80,7 +80,7 @@ public class StringUtils {
     public static Boolean isSpecialCharacterString(String string) {
         boolean isSpecial = true;
         for (char ch : string.toCharArray()) {
-            if (!Character.isLetterOrDigit(ch) || ch != ' ') {
+            if (Character.isLetterOrDigit(ch) || ch == ' ') {
                 isSpecial = false;
                 break;
             }
