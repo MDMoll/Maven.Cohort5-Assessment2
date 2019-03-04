@@ -1,5 +1,12 @@
 package rocks.zipcode.assessment2.fundamentals;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
 public class BasicStringUtils {
     /**
      * @param string1 - Base string to be added to
@@ -34,8 +41,17 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        String output = string.replace(charactersToRemove, "");
-        return output.replace(reverse(charactersToRemove), "");
+        return Pattern.compile("").splitAsStream(string)
+                .filter(s -> !charactersToRemove.contains(s))
+                .collect(Collectors.joining());
+    }
+
+    public static char charFinder(String inputString) {
+        char charToRemove = ' ';
+        for (int i = 0; i < inputString.length(); i++) {
+            charToRemove = inputString.charAt(i);
+        }
+        return charToRemove;
     }
 
     /**

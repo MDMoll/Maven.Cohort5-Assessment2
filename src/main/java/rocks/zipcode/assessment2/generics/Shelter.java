@@ -14,10 +14,10 @@ import java.util.*;
  * Shelter<Dog> dogHouse = new Shelter<Dog>();
  */
 public class Shelter<Object> {
-    Shelter<Object> shelter = new Shelter<>();
+    Shelter<Object> shelter;
 
     public Shelter() {
-
+    this.shelter = shelter;
     }
 
     /**

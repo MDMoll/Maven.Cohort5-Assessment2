@@ -50,7 +50,7 @@ public class StringUtils {
     public static Boolean isAlphaString(String string) {
         boolean isAlpha = true;
         for (char ch : string.toCharArray()) {
-            if (!Character.isLetter(ch) || ch != ' ') {
+            if (!Character.isLetter(ch) && ch != ' ') {
                 isAlpha = false;
                 break;
             }
