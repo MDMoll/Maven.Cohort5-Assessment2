@@ -1,6 +1,9 @@
 package rocks.zipcode.assessment2.arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.IntStream;
 
 /**
  * @author leon on 28/11/2018.
@@ -43,9 +46,9 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1 and odd-values decremented by 1
      */
     public static Integer[] incrementEvenDecrementOdd(Integer[] integerArray) {
+        arrayHelper(integerArray);
         Integer[] changedArray = Arrays.copyOf(integerArray, integerArray.length);
         for (int i = 0; i < changedArray.length; i++) {
-            if (changedArray[i] == 0) {break;}
             if (changedArray[i] % 2 == 0) {
                 changedArray[i] += 1;
             } else if (changedArray[i] % 2 != 0) {
@@ -55,19 +58,55 @@ public class IntegerArrayUtils {
         return changedArray;
     }
 
+    public static List<Integer> arrayHelper(Integer[] arrayToChange) {
+        List<Integer> intList = new ArrayList<>();
+        for (int i : arrayToChange) {
+            intList.add(i);
+        }
+        return intList;
+    }
+
     /**
      * @param integerArray - array to be evaluated
      * @return identical array with even-values incremented by 1
      */
     public static Integer[] incrementEven(Integer[] integerArray) {
-        Integer[] changedArray = Arrays.copyOf(integerArray, integerArray.length);
-        return incrementEvenDecrementOdd(integerArray);}
+        for (int i = 0; i < integerArray.length; i++) {
+            if (integerArray[i] % 2 == 0) {integerArray[i] += 1;}
+        } return integerArray;
+    }
 
     /**
      * @param input - array to be evaluated
      * @return identical array with odd-values decremented by 1
      */
     public static Integer[] decrementOdd(Integer[] input) {
-        return incrementEvenDecrementOdd(input);
+        for (int i = 0; i < input.length; i++) {
+         if (input[i] % 2 != 0) {input[i] -= 1;}
+        } return input;
+    }
+
+    public static Integer[] oddsAndEvensHelper(Integer[] arr, String parity) {
+        Integer[] result = new Integer[arr.length];
+        if (parity.equals("odd")) {
+            IntStream.range(0, arr.length).filter(i -> i % 2 != 0)
+                    .forEach(i -> result[i] = arr[i] - 1);
+            return result;
+        } else {
+            IntStream.range(0, arr.length).filter(i -> i % 2 == 0)
+                    .forEach(i -> result[i] = arr[i] + 1);
+            return result;
+        }
+    }
+
+    public Integer[] oAndEHelper(Integer[] arr, String parity) {
+        for (int i : arr) {
+            if (i % 2 == 0) {
+                arr[i]++;
+            } else {
+                arr[i]--;
+            }
+        }
+        return arr;
     }
 }

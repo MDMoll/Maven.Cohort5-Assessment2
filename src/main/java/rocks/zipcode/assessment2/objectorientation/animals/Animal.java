@@ -11,28 +11,32 @@ public class Animal {
     public Animal() {
     }
 
+    Long id;
+    Person owner;
     /**
      * @param id - id of animal
      * @param owner - owner of animal
      */
     public Animal(Long id, Person owner) {
+        this.id = id;
+        this.owner = owner;
     }
 
     public Long getId() {
-        return null;
+        return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Long id) { this.id = id;
     }
 
     public Person getOwner() {
-        return null;
+        return owner;
     }
 
-    public void setOwner(Person owner) {
+    public void setOwner(Person owner) {this.owner = owner;
     }
 
     public Address getAddress() {
-        return null;
+        return owner.getAddress();
     }
 }
