@@ -8,7 +8,7 @@ public class Person {
 
     Long id;
     String name;
-    Address address;
+    public Address address;
 
     /**
      * @param id      - id of person
