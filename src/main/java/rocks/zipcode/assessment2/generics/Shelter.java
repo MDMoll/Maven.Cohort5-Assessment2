@@ -13,7 +13,7 @@ import java.util.*;
  * Shelter<Person> farmHouse = new Shelter<Person>();
  * Shelter<Dog> dogHouse = new Shelter<Dog>();
  */
-public class Shelter<Object> {
+public class Shelter<Object> implements Iterable{
     Shelter<Object> shelter;
 
     public Shelter() {
@@ -44,6 +44,11 @@ public class Shelter<Object> {
     }
 
     public Integer getIndexOf(Object ageable) {
+        return null;
+    }
+
+    @Override
+    public Iterator iterator() {
         return null;
     }
 }

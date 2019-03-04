@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static java.util.stream.Collectors.toMap;
+
 /**
  * Use a map to keep track of inventory in a store
  */
@@ -29,7 +31,6 @@ public class Inventory {
      */
     public Inventory() {
         inv = new HashMap<>();
-//        inv.put(strings);
     }
 
     /**
@@ -37,7 +38,6 @@ public class Inventory {
      */
     public void addItemToInventory(String item) {
         inv.put(item, inv.get(item) + 1);
-
 
     }
 
